@@ -187,7 +187,7 @@ Transaction data is stored locally in the user's browser. The application does n
 
 ## Browser Compatibility
 
-Intended for modern browsers supporting HTML5, CSS3, JavaScript ES6+, Local Storage, modern DOM APIs, and SVG. Recommended: recent versions of Google Chrome, Microsoft Edge, and Mozilla Firefox.
+Intended for modern browsers supporting HTML5, CSS3, JavaScript ES6+, Local Storage, and modern DOM APIs. Recommended: recent versions of Google Chrome, Microsoft Edge, and Mozilla Firefox.
 
 ---
 
