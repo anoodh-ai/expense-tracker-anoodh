@@ -1,484 +1,278 @@
 # Expense Tracker
 
-A responsive and user-friendly **Expense Tracker Web Application** built using **HTML, CSS, and Vanilla JavaScript**.
+A responsive Expense Tracker web application built using HTML, CSS, and Vanilla JavaScript.
 
-This project was developed as part of the **Software Developer Intern recruitment task for Lean Transition Solutions (LTS)**.
-
-The application allows users to manage income and expense transactions, view financial summaries, filter and search transactions, and analyze spending through category-based charts. All transaction data is stored locally in the browser using **Local Storage**, allowing it to persist even after refreshing the page.
+Users can manage income and expense transactions, view financial summaries, filter and search transactions, and keep their data saved in the browser using Local Storage.
 
 ---
 
 ## Features
 
-### Core Features
-
-* Add income transactions
-* Add expense transactions
-* Enter transaction amount, category, date, and description
-* Edit existing transactions
-* Delete transactions with confirmation
-* View total income
-* View total expenses
-* View current balance
-* Filter transactions by:
-
-  * Income
-  * Expense
-  * Category
-* Search transactions by category or description
-* Sort transactions by:
-
-  * Newest
-  * Oldest
-  * Highest amount
-  * Lowest amount
-* Persist transaction data using Browser Local Storage
-* Restore saved transactions automatically after page refresh
+- Add income and expense transactions (amount, category, date, description)
+- Edit transactions
+- Delete transactions with confirmation
+- View total income, total expenses, and current balance
+- Filter by income/expense and by category
+- Search by description or category
+- Sort transactions
+- Category suggestions based on previously used categories
+- Monthly income, expense, and balance summary
+- Category-wise expense chart
+- Income and expense visual charts
+- Form validation with helpful error messages
+- Toast notifications
+- Responsive design
+- Professional empty state
+- Local Storage persistence (data remains after page refresh)
 
 ---
 
-## Optional Bonus Features
+## Technologies Used
 
-The application also implements all the optional bonus requirements mentioned in the task.
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Browser Local Storage
+- SVG-based charts
 
-### Monthly Summary
-
-Users can select a month and view:
-
-* Monthly income
-* Monthly expenses
-* Monthly balance
-
-### Category-wise Expense Chart
-
-The application provides a visual breakdown of expenses by category using a responsive bar chart.
-
-### Validation and Helpful Error Messages
-
-Form validation is implemented for:
-
-* Amount
-* Category
-* Date
-* Description
-
-Users receive clear error messages when invalid or incomplete information is submitted.
+No backend, database, framework, or external JavaScript library is required.
 
 ---
 
-## Additional Enhancements
-
-Beyond the specified requirements, the application includes several additional usability and accessibility improvements.
-
-### Financial Visualization
-
-* Monthly expense pie chart
-* Monthly income pie chart
-* Category percentages
-* Total amount displayed at the center of pie charts
-* Interactive chart legends
-
-### Transaction Management
-
-* Transaction count
-* Dynamic category filter
-* Empty-state interface when no transactions are available
-* Delete confirmation modal
-* Edit mode with cancel option
-
-### User Experience
-
-* Success and error toast notifications
-* Automatic current date selection
-* Automatic current month selection
-* Description character counter
-* Indian Rupee (INR) currency formatting
-* Smooth scrolling to the transaction form
-* Hover and focus states
-* Responsive layouts for different screen sizes
-
-### Accessibility
-
-* Accessible button labels
-* Keyboard-friendly interactions
-* Visible focus states
-* Reduced-motion support
-* Semantic HTML structure
-* ARIA attributes where appropriate
-
----
-
-## Technology Stack
-
-| Technology          | Purpose                                        |
-| ------------------- | ---------------------------------------------- |
-| HTML5               | Application structure and semantic markup      |
-| CSS3                | Styling, layout, responsiveness, and UI design |
-| JavaScript (ES6+)   | Application logic and interactivity            |
-| Local Storage API   | Persistent browser-side data storage           |
-| CSS Grid            | Responsive page layouts                        |
-| CSS Flexbox         | Component alignment and layouts                |
-| JavaScript Intl API | INR currency and date formatting               |
-
-No external frontend framework or JavaScript library is required.
-
----
-
-## Application Structure
+## Project Structure
 
 ```text
-expense-tracker/
+expense-tracker-anoodh/
 │
 ├── index.html
-├── style.css
-├── script.js
-├── README.md
-└── assets/
-    └── ...
-```
-
-> The exact folder and asset structure may vary depending on the final repository version.
-
----
-
-## How the Application Works
-
-### 1. Add a Transaction
-
-The user selects either:
-
-* Income
-* Expense
-
-Then enters:
-
-* Amount
-* Category
-* Date
-* Description
-
-After successful validation, the transaction is added to the application.
-
-### 2. Edit a Transaction
-
-Each transaction provides an edit action.
-
-When selected:
-
-1. The existing transaction data is loaded into the form.
-2. The form switches to edit mode.
-3. The user can modify the information.
-4. The updated transaction is saved to Local Storage.
-
-### 3. Delete a Transaction
-
-Users can delete a transaction using the delete action.
-
-Before deletion, the application displays a confirmation modal to help prevent accidental deletion.
-
-### 4. Data Persistence
-
-Transactions are stored using the browser's Local Storage API.
-
-The application automatically loads saved transactions when it starts.
-
-Therefore, transaction data remains available after:
-
-* Page refresh
-* Browser tab reopening
-
-as long as the browser's Local Storage data has not been cleared.
-
----
-
-## Validation
-
-The application validates transaction data before saving.
-
-### Amount
-
-The amount must:
-
-* Be a valid number
-* Be greater than zero
-
-Example error:
-
-```text
-Amount must be greater than 0.
-```
-
-### Category
-
-The category cannot be empty.
-
-Example error:
-
-```text
-Please enter a category.
-```
-
-### Date
-
-A transaction date is required.
-
-Example error:
-
-```text
-Please select a date.
-```
-
-### Description
-
-The description is limited to 200 characters.
-
-Example error:
-
-```text
-Description cannot exceed 200 characters.
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+└── README.md
 ```
 
 ---
 
-## Financial Calculations
+## How to Run
 
-The dashboard automatically calculates:
+**Option 1: VS Code Live Server**
 
-### Total Income
+1. Clone or download the repository.
+2. Open the project folder in Visual Studio Code.
+3. Install the Live Server extension if it is not already installed.
+4. Right-click `index.html` and select **Open with Live Server**.
 
-The sum of all income transactions.
+**Option 2: Open Directly in a Browser**
 
-### Total Expenses
-
-The sum of all expense transactions.
-
-### Current Balance
-
-```text
-Current Balance = Total Income - Total Expenses
-```
-
-Monthly calculations use the same logic but only consider transactions belonging to the selected month.
+No backend server is needed. You can open `index.html` directly in a modern web browser.
 
 ---
 
-## Filtering and Search
+## Application Overview
 
-Transactions can be filtered using:
+### Adding a Transaction
 
-### Type
+Select the type (Income or Expense) and enter the amount, category, date, and description. The description is optional. After submitting, the transaction is added to the list and the dashboard updates automatically.
 
-* All
-* Income
-* Expense
+### Editing Transactions
 
-### Category
+The selected transaction is loaded into the form. After modifying it and submitting, the existing transaction is updated and saved to Local Storage. Editing does not create a duplicate.
 
-The category filter is generated dynamically from the available transaction data.
+### Deleting Transactions
+
+A confirmation step is shown before deleting. After deletion, the list, dashboard totals, charts, monthly summary, and Local Storage are all updated.
+
+### Dashboard Calculations
+
+The dashboard displays Total Income, Total Expenses, and Current Balance.
+
+```text
+Balance = Total Income - Total Expenses
+```
+
+These values update automatically when transactions are added, edited, or deleted.
+
+### Filtering
+
+Transactions can be filtered by type (All, Income, Expense) and by category. The category filter is populated automatically from the transaction data. Filters work together and update instantly without refreshing the page.
+
+Example: Type `Expense` + Category `Food` shows only Food expenses.
 
 ### Search
 
-Users can search transaction records using:
+Users can search by category or description (for example, `food`). Search can be used together with the filters.
 
-* Category
-* Description
+### Sorting
 
-Search is case-insensitive.
+Transactions can be sorted by date and amount. Sorting only changes the displayed list, not the stored data.
 
----
+### Category Suggestions
 
-## Sorting
+Previously used categories (for example Food, Salary, Transport, Shopping, Bills) appear as suggestions when adding a new transaction. Users can still enter a new category.
 
-Transactions can be sorted by:
+### Local Storage
 
-* Newest
-* Oldest
-* Highest amount
-* Lowest amount
+Transactions are saved in the browser's `localStorage`. The application:
 
-Sorting is applied to the currently filtered transaction list.
+- Saves transactions after changes and loads them on startup
+- Preserves data after page refresh
+- Updates stored data when transactions are edited or deleted
+- Handles empty and invalid/corrupted stored data safely
 
----
+Data is converted using `JSON.stringify()` and restored using `JSON.parse()`.
 
-## Charts and Visualization
+### Monthly Expense Summary
 
-The application includes three types of financial visualization.
-
-### Expense Category Chart
-
-Displays total expenses grouped by category.
-
-### Expense Pie Chart
-
-Displays the selected month's expenses by category, including:
-
-* Category name
-* Amount
-* Percentage
-
-### Income Pie Chart
-
-Displays the selected month's income by category.
-
-These visualizations provide a quick overview of the user's financial activity.
-
----
-
-## Responsive Design
-
-The application is designed to work across different screen sizes.
-
-Responsive layouts are provided for:
-
-* Desktop
-* Laptop
-* Tablet
-* Mobile
-* Small mobile devices
-
-The interface automatically adjusts:
-
-* Dashboard cards
-* Forms
-* Charts
-* Filters
-* Transaction cards
-* Modal dialogs
-* Buttons
-* Navigation/header layout
-
----
-
-## Running the Application
-
-No backend server or database setup is required.
-
-### Option 1 — Open Directly
-
-Clone or download the repository and open:
+Users can select a month to view total income, total expenses, and balance for that month, based on transaction dates.
 
 ```text
-index.html
+January 2026
+Income: ₹50,000 | Expenses: ₹20,000 | Balance: ₹30,000
 ```
 
-in a modern web browser.
+### Category-wise Expense Chart
 
-### Option 2 — Using VS Code
+Expenses are grouped by category and the chart updates automatically when data changes.
 
-1. Clone the repository.
-2. Open the project folder in Visual Studio Code.
-3. Open `index.html`.
-4. Run the application using a local development server such as **Live Server**.
+```text
+Food       → ₹8,000
+Transport  → ₹3,000
+Shopping   → ₹5,000
+Bills      → ₹7,000
+```
+
+### Income and Expense Charts
+
+Visual charts for income and expense data are generated using JavaScript and SVG-based UI. No external chart library is required.
+
+### Validation
+
+- Amount must be greater than zero
+- Category is required
+- Date is required
+- Description cannot exceed 200 characters
+
+Errors are displayed near the relevant form fields.
+
+### Toast Notifications
+
+Feedback is shown after important actions, such as transaction added, updated, or deleted, and storage-related errors.
+
+### Empty State
+
+When there are no transactions, a professional empty state guides the user to add their first transaction.
+
+### Responsive Design
+
+The layout adapts to mobile, tablet, laptop, and desktop using CSS media queries. It was considered for approximately 360px, 390px, 768px, 1024px, and 1440px, ensuring:
+
+- Forms stack properly on smaller screens
+- Transaction information remains readable
+- Buttons remain easy to use
+- Dashboard cards and charts adapt to screen width
+- Horizontal overflow is avoided
+
+---
+
+## Data and Privacy
+
+Transaction data is stored locally in the user's browser. The application does not use backend servers, external databases, or user authentication, and no data is sent to an external server.
 
 ---
 
 ## Browser Compatibility
 
-The application is designed for modern browsers supporting standard HTML5, CSS3, and JavaScript features.
-
-Recommended browsers include:
-
-* Google Chrome
-* Microsoft Edge
-* Mozilla Firefox
-* Safari
+Intended for modern browsers supporting HTML5, CSS3, JavaScript ES6+, Local Storage, modern DOM APIs, and SVG. Recommended: recent versions of Google Chrome, Microsoft Edge, and Mozilla Firefox.
 
 ---
 
-## Data Storage
+## Testing Checklist
 
-This project uses browser-side Local Storage instead of a backend database.
+**Transaction Management**
+- [x] Add income
+- [x] Add expense
+- [x] Edit transaction
+- [x] Delete transaction
+- [x] Delete confirmation
 
-### Storage Key
+**Dashboard**
+- [x] Total income, total expense, and current balance calculation
 
-```text
-lts-expense-tracker-transactions
+**Filtering and Search**
+- [x] Transaction type filter
+- [x] Category filter
+- [x] Search
+- [x] Sorting
+- [x] Combined filtering and search
+
+**Data Persistence**
+- [x] Local Storage
+- [x] Data persistence after refresh
+- [x] Local Storage update after editing
+- [x] Local Storage update after deleting
+
+**Bonus Features**
+- [x] Monthly expense summary
+- [x] Category-wise expense chart
+- [x] Income chart
+- [x] Expense chart
+
+**User Experience**
+- [x] Form validation
+- [x] Toast notifications
+- [x] Empty state
+- [x] Category suggestions
+- [x] Responsive mobile layout
+- [x] Responsive desktop layout
+- [x] No horizontal scrolling on mobile
+- [x] Browser console checked for errors
+
+---
+
+## Project Architecture
+
+The project intentionally uses a simple frontend architecture to demonstrate core web development fundamentals.
+
+- **HTML:** page structure, forms, dashboard cards, transaction list, filters, search controls, monthly summary, chart containers
+- **CSS:** layout, responsive design, colors, typography, cards, buttons, form styling, breakpoints, hover states, transitions
+- **JavaScript:** form handling, transaction creation/editing/deletion, dashboard calculations, filtering, searching, sorting, Local Storage, validation, monthly calculations, chart rendering, DOM updates, toast notifications
+
+### Important JavaScript Concepts Used
+
+DOM manipulation, `querySelector()`, `addEventListener()`, functions, arrays, objects, `map()`, `filter()`, `reduce()`, `find()`, `sort()`, `JSON.stringify()`, `JSON.parse()`, `localStorage.setItem()`, `localStorage.getItem()`, date handling, template literals, event handling, and form validation.
+
+### No Backend Required
+
+This is a frontend-only application. It does not require Node.js, Express, React, Firebase, authentication, a database, or an API.
+
+The project focuses on strong fundamentals in HTML, CSS, JavaScript, DOM manipulation, arrays, objects, functions, events, forms, Local Storage, filtering, sorting, data calculations, and responsive UI.
+
+---
+
+## Getting the Project from GitHub
+
+```bash
+git clone https://github.com/anoodh-ai/expense-tracker-anoodh.git
 ```
 
-The transaction data is stored as JSON.
+Then open the project folder in Visual Studio Code and run `index.html` using Live Server.
 
-No transaction data is sent to an external server.
-
----
-
-## Security and Data Considerations
-
-This application is a client-side demonstration project.
-
-Transaction data is stored locally in the user's browser. Clearing browser site data or Local Storage will remove the stored transactions.
-
-The application does not include authentication or server-side data storage.
-
----
-
-## Design Approach
-
-The interface follows a clean and minimal dashboard-style design with an emphasis on:
-
-* Readability
-* Clear financial hierarchy
-* Consistent spacing
-* Responsive layouts
-* Accessible controls
-* Visual feedback
-* Simple transaction management
-
-The design uses separate visual treatments for:
-
-* Income
-* Expenses
-* Balance
-* Primary actions
-* Validation errors
-* Empty states
-
----
-
-## Project Objective
-
-The objective of this project was to demonstrate practical frontend development skills using fundamental web technologies.
-
-The implementation focuses on:
-
-* DOM manipulation
-* Event handling
-* Form handling
-* Data validation
-* Array methods
-* Dynamic UI rendering
-* Local Storage
-* Responsive CSS
-* Reusable JavaScript functions
-* User experience
-* Accessibility considerations
-
-
-## Future Improvements
-
-Potential future enhancements could include:
-
-* User authentication
-* Backend API integration
-* Cloud database storage
-* Multiple user accounts
-* Export transactions to CSV/PDF
-* Budget limits and alerts
-* Recurring transactions
-* Advanced financial reports
-* Dark mode
-* Data import/export
-* Cloud synchronization
+**Repository:** https://github.com/anoodh-ai/expense-tracker-anoodh
 
 ---
 
 ## Author
 
-**Anoodh A**
+**Anoodh**
 
-Developed as part of the **Software Developer Intern recruitment task for Lean Transition Solutions (LTS)**.
+GitHub: https://github.com/anoodh-ai
 
 ---
 
-## License
+## Assignment
 
-This project was created for an internship recruitment task and demonstration purposes.
+This project was developed as an internship recruitment assignment for an Expense Tracker Web Application. The implementation focuses on functionality, responsive design, Local Storage persistence, clean UI/UX, and core JavaScript fundamentals.
