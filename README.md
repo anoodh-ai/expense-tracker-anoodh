@@ -33,7 +33,7 @@ Users can manage income and expense transactions, view financial summaries, filt
 - CSS3
 - Vanilla JavaScript
 - Browser Local Storage
-- SVG-based charts
+- CSS/HTML-based charts
 
 No backend, database, framework, or external JavaScript library is required.
 
@@ -42,16 +42,17 @@ No backend, database, framework, or external JavaScript library is required.
 ## Project Structure
 
 ```text
-expense-tracker-anoodh/
+LTS-expense-tracker/
 │
-├── index.html
-│
+├── assets
+|
 ├── css/
 │   └── style.css
 │
 ├── js/
 │   └── script.js
 │
+├── index.html
 └── README.md
 ```
 
@@ -147,7 +148,7 @@ Bills      → ₹7,000
 
 ### Income and Expense Charts
 
-Visual charts for income and expense data are generated using JavaScript and SVG-based UI. No external chart library is required.
+Visual charts for income and expense data are generated using JavaScript and CSS-based chart UI. No external chart library is required.
 
 ### Validation
 
